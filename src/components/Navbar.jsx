@@ -1,19 +1,57 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import "./Navbar.css";
 import logo from "../public/logo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (scrollTop / docHeight) * 100;
+      setScrollPercentage(scrolled);
+    };
+
+    if (location.pathname === "/") {
+      window.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [location.pathname]);
+
+  const getBackgroundColor = () => {
+    const adjustedScroll = Math.max(0, scrollPercentage - 5); // Start changing opacity from 15%
+    const opacity = Math.min(adjustedScroll / 27.5, 1); // Adjust based on remaining 85%
+    return `rgba(59, 130, 246, ${opacity}), rgba(139, 92, 246, ${opacity})`; // Blue to Purple gradient
+  };
 
   return (
-    <div className="fixed bg-gradient-to-r from-blue-500 to-purple-600 p-2 shadow-md w-full z-10 top-0">
-      {/* // <div className="fixed bg-black bg-opacity-0 p-4 w-full z-50 top-0"> */}
-      <div className=" mx-auto flex justify-between items-center">
-        <div className="">
+    <div
+      className={`fixed p-2 shadow-md w-full z-10 top-0 ${
+        location.pathname === "/" && scrollPercentage < 15
+          ? "bg-transparent"
+          : ""
+      }`}
+      style={{
+        background:
+          location.pathname === "/"
+            ? `linear-gradient(to right, ${getBackgroundColor()})`
+            : "linear-gradient(to right, #3b82f6, #8b5cf6)",
+      }}
+    >
+      <div className="mx-auto flex justify-between items-center">
+        <div>
           <Link to="/">
-            <img className="rounded-full h-14" src={logo} alt="" />
+            <img className="rounded-full h-14" src={logo} alt="Logo" />
           </Link>
         </div>
 
