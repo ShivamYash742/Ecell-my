@@ -19,7 +19,7 @@ const Navbar = () => {
       setScrollPercentage(scrolled);
     };
 
-    if (location.pathname === "/") {
+    if (location.pathname === "/" || location.pathname === "/events") {
       window.addEventListener("scroll", handleScroll);
     }
 
@@ -29,21 +29,22 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const getBackgroundColor = () => {
-    const adjustedScroll = Math.max(0, scrollPercentage - 5); // Start changing opacity from 15%
-    const opacity = Math.min(adjustedScroll / 27.5, 1); // Adjust based on remaining 85%
+    const adjustedScroll = Math.max(0, scrollPercentage - 15); // Start changing opacity from 15%
+    const opacity = Math.min(adjustedScroll / 35, 1); // Adjust based on remaining 85%
     return `rgba(59, 130, 246, ${opacity}), rgba(139, 92, 246, ${opacity})`; // Blue to Purple gradient
   };
 
   return (
     <div
       className={`fixed p-2 shadow-md w-full z-10 top-0 ${
-        location.pathname === "/" && scrollPercentage < 15
+        (location.pathname === "/" || location.pathname === "/events") &&
+        scrollPercentage < 15
           ? "bg-transparent"
           : ""
       }`}
       style={{
         background:
-          location.pathname === "/"
+          location.pathname === "/" || location.pathname === "/events"
             ? `linear-gradient(to right, ${getBackgroundColor()})`
             : "linear-gradient(to right, #3b82f6, #8b5cf6)",
       }}
