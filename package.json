@@ -12,10 +12,14 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "framer-motion": "^11.15.0",
+    "gsap": "^3.12.5",
+    "jquery": "^3.7.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.0",
-    "react-transition-group": "^4.4.5"
+    "react-slick": "^0.30.3",
+    "react-transition-group": "^4.4.5",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
