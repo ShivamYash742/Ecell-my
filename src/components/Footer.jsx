@@ -5,6 +5,7 @@ import linkedinLogo from "../public/linkedin.png";
 import facebookLogo from "../public/facebook.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../varients";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -31,19 +32,19 @@ const Footer = () => {
             <h4 className="font-bold">Useful Links</h4>
             <ul>
               <li>
-                <a href="/about" className="hover:underline">
+                <Link to="/about" className="hover:underline">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services" className="hover:underline">
+                <Link to="/services" className="hover:underline">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="hover:underline">
+                <Link to="/contact" className="hover:underline">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
