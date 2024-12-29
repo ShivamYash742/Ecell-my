@@ -29,8 +29,8 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const getBackgroundColor = () => {
-    const adjustedScroll = Math.max(0, scrollPercentage - 15); // Start changing opacity from 15%
-    const opacity = Math.min(adjustedScroll / 35, 1); // Adjust based on remaining 85%
+    const adjustedScroll = Math.max(0, scrollPercentage - 8.5); // Start changing opacity from 15%
+    const opacity = Math.min(adjustedScroll / 27.5, 1); // Adjust based on remaining 85%
     return `rgba(59, 130, 246, ${opacity}), rgba(139, 92, 246, ${opacity})`; // Blue to Purple gradient
   };
 

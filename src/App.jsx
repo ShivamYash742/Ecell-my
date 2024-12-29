@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./components/Homepage";
 import Footer from "./components/Footer";
 import Aboutus from "./components/Aboutus";
-import Events from "./components/Events";
+import Events from "./components/Event";
 import ContactUs from "./components/ContactUs";
 
 function App() {
