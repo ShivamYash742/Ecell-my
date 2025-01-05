@@ -77,7 +77,7 @@ const ActivitiesSection = () => {
           </motion.div>
         ))}
       </div>
-      <h3 className="text-xl font-semibold text-gray-800 mb-4">Our Sponsors</h3>
+      <h3 className="text-3xl font-semibold text-gray-800 mb-4">Our Sponsors</h3>
       <div className="flex justify-center gap-4 flex-wrap">
         {sponsorLogos.map((sponsor, index) => (
           <motion.div

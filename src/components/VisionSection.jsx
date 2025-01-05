@@ -2,7 +2,7 @@ import React from 'react';
 
 const VisionSection = () => {
   return (
-    <section className="py-16 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center">
+    <section className="py-16 px-4 bg-gradient-to-r from-[#00507fd9] to-[#57b847] text-white text-center">
       <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
       <div className="text-xl max-w-4xl mx-auto">
         <p className="mb-6">

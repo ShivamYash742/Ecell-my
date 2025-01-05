@@ -31,12 +31,12 @@ const Navbar = () => {
   const getBackgroundColor = () => {
     const adjustedScroll = Math.max(0, scrollPercentage - 8.5); // Start changing opacity from 15%
     const opacity = Math.min(adjustedScroll / 27.5, 1); // Adjust based on remaining 85%
-    return `rgba(59, 130, 246, ${opacity}), rgba(139, 92, 246, ${opacity})`; // Blue to Purple gradient
+    return `rgba(0, 80, 127, ${opacity}), rgba(87, 184, 71, ${opacity})`; // Blue to Purple gradient
   };
 
   return (
     <div
-      className={`fixed p-2 shadow-md w-full z-10 top-0 ${
+      className={`fixed px-7 p-2 shadow-md w-full z-10 top-0 ${
         (location.pathname === "/" || location.pathname === "/events") &&
         scrollPercentage < 15
           ? "bg-transparent"
@@ -46,18 +46,18 @@ const Navbar = () => {
         background:
           location.pathname === "/" || location.pathname === "/events"
             ? `linear-gradient(to right, ${getBackgroundColor()})`
-            : "linear-gradient(to right, #3b82f6, #8b5cf6)",
+            : "linear-gradient(to right, #1b75bb, #57b847)",
       }}
     >
       <div className="mx-auto flex justify-between items-center">
         <div>
           <Link to="/">
-            <img className="rounded-full h-14" src={logo} alt="Logo" />
+            <img className="h-14" src={logo} alt="Logo" />
           </Link>
         </div>
 
         {/* Desktop Navbar Links */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex space-x-6 text-lg">
           <Link
             to="/"
             className="text-white hover:text-yellow-400 transition duration-300 no-underline hover:underline underline-offset-2"

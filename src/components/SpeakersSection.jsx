@@ -45,7 +45,7 @@ const SpeakersSection = () => {
   }, []);
 
   return (
-    <div className="relative h-[90vh] w-full bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 overflow-hidden">
+    <div className="relative h-[140vh] xl:h-[90vh] w-full bg-gradient-to-r from-[#00507fd9] to-[#57b847] overflow-hidden">
       <div className="text-center font-semibold text-5xl py-4 text-white">
         Meet Our Speakers
       </div>
@@ -69,8 +69,8 @@ const SpeakersSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
               {box.name}
             </h2>
-            <h3 className="text-xl md:text-2xl text-gray-600">{box.role}</h3>
-            <p className="text-center text-gray-700 px-4 md:px-8">{box.info}</p>
+            <h3 className="text-xl text-center md:text-2xl text-gray-600">{box.role}</h3>
+            {/* <p className="text-center text-gray-700 px-4 md:px-8">{box.info}</p> */}
             <a
               href={box.linkedin}
               target="_blank"

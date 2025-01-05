@@ -31,9 +31,9 @@ function App() {
       {/* Loading Screen */}
       <div className="">
         {isLoading && (
-          <div className="absolute inset-0 grid justify-center items-center bg-black bg-opacity-80 min-h-screen">
+          <div className="absolute inset-0 grid justify-center items-center bg-black min-h-screen">
             <div>
-              <img className="rounded-full w-64" src={logo} alt="logo" />
+              <img className=" w-60" src={logo} alt="logo" />
             </div>
             <div className="text-white text-5xl w-full text-center">
               {words[currentWordIndex]}
